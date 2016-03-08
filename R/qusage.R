@@ -210,7 +210,6 @@ makeComparison <- function(eset,       ##a matrix of log2(expression values), wi
     grp.1 = labels==grps[1]  ##PostTreatment
     grp.2 = labels==grps[2]  ##Baseline
     if(sum(grp.1)==0 | sum(grp.2)==0){stop("Contrast groups do not match labels")}
-    params$n.samples = sum(grp.1) + sum(grp.2)
     
     eset.1 = eset[,grp.1]
     eset.2 = eset[,grp.2]
@@ -225,6 +224,7 @@ makeComparison <- function(eset,       ##a matrix of log2(expression values), wi
         eset.1 = eset.1[,match(colnames(eset.2),colnames(eset.1))]
       #}
     }
+    params$n.samples = ncol(eset.1) + ncol(eset.2)
     
     results = newQSarray(c(params, calcIndividualExpressions(eset.2,eset.1,paired=paired,min.variance.factor=min.variance.factor)))
   }
