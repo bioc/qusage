@@ -137,6 +137,7 @@ qgen<-function(eset,design,fixed,geneSets,contrast.factor,contrast,
   percent=0.1
   #GLS
   if(ModelInd==0){
+
     for (i in 1:nrow(eset)){
       if((i/nrow(eset))>percent){
         cat(paste(percent*100,"%...",sep="")) 
@@ -175,9 +176,19 @@ qgen<-function(eset,design,fixed,geneSets,contrast.factor,contrast,
         percent<-percent+.1
       }
       design$y<-eset[i,]
-      modresult<-try(lme(formula(paste("y",fixed,sep="")),data=design,random=random,
-                         correlation=correlation,control=lmeControl(opt='optim')),
-                     silent = T)
+      modresult<-try(do.call(lme,
+                        list(fixed=formula(paste("y",fixed,sep="")),
+                             data=design,
+                             random=random,
+                             correlation=correlation,
+                             control=lmeControl(opt='optim')
+                            )
+                        ),
+                      silent=T
+                    )
+      # modresult<-try(lme(formula(paste("y",fixed,sep="")),data=design,random=random,
+      #                    correlation=correlation,control=lmeControl(opt='optim')),
+      #                silent = T)
       if(class(modresult)=="try-error"){
         if(grepl("converg", modresult)){
           converge.ind<-c(converge.ind,i)
