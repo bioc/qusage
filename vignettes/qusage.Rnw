@@ -372,7 +372,7 @@ fixedeffects <- ~Hours+Condition+Condition*Hours+Age+Gender
 
 \item \textbf{\texttt{contrast.factor}} 
 
-This one-sided fromula refers to one of the fixed effects components in the fixed input that tells qgen what contrast the user is interested in making a comparison.  So if the user wishes to compare symptomatic versus asymptomatic regardless of time, then the user would simply provide ~Hours.  If the user would like to compare symptomatic versus asymptomatic at hour 77 then the user would provide the interaction component ~Hours*Condition. For our example we wish to compare changes at Hour 77 versus Hour 0 among the symptomatic group only, this corresponds to:
+This one-sided fromula refers to one of the fixed effects components in the fixed input that tells qgen what contrast the user is interested in making a comparison.  So if the user wishes to compare symptomatic versus asymptomatic regardless of time, then the user would simply provide $\sim$Hours.  If the user would like to compare symptomatic versus asymptomatic at hour 77 then the user would provide the interaction component $\sim$Hours*Condition. For our example we wish to compare changes at Hour 77 versus Hour 0 among the symptomatic group only, this corresponds to:
 
 <<qgen_contrast.factor>>=
 con.fac <- ~Condition*Hours
