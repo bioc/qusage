@@ -53,7 +53,7 @@ qgen<-function(eset,design,fixed,geneSets,contrast.factor,contrast,
   #If samples have no sample id it is assumed they are in correct order.  We simply check 
   #if the row and column numbers match, as that is all we can do to find if there is an issue.
   
-  if(is.na(design.sampleid)){
+  if(is.null(design.sampleid)){
     warning("No sample identifier given. Rows in design are assumed to correspond to the columns of eset.")
     if(dim(eset)[2]!= dim(design)[1]){
       stop("Number of rows in design do not match number of samples in eset.") 
@@ -107,10 +107,7 @@ qgen<-function(eset,design,fixed,geneSets,contrast.factor,contrast,
           warning("Number of random effect replicates are low.  Adjusted Vif estimation can not be conducted due to nested factors. The conditional residuals will be used and could potentially be overly optimistic.")
         }
       }
-    }
-    
-    
-    
+    }    
   }
   
   #Running row by row modeling using GLS or LME depending if random effects are in the model or not
