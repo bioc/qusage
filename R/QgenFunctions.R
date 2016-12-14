@@ -59,10 +59,18 @@ qgen<-function(eset,design,fixed,geneSets,contrast.factor,contrast,
       stop("Number of rows in design do not match number of samples in eset.") 
     }  
   }
-  
-  
+
+  ##check that rownames of eset are valid
+  if(is.null(rownames(eset))){
+    stop("Rownames for eset not found")
+  }
+  if(length(unique(rownames(eset)))!=nrow(eset) | any(rownames(eset)=="")){
+    stop("The rownames of eset are invalid. Rownames must be unique and must not contain any empty values")
+  }
+
   #Removing rows in eset that are not in the genesets to save computational time
   geneindex<-which(rownames(eset) %in% unlist(geneSets))
+  if(length(geneindex)==0){stop("Genes in geneSets do not match rownames of eset.")}
   eset<-eset[geneindex,]
   
   
@@ -221,11 +229,17 @@ qgen<-function(eset,design,fixed,geneSets,contrast.factor,contrast,
     warning(paste(length(converge.ind)," gene(s) for the linear model did not converge and were removed. The first omission is found at  ",rownames(eset)[converge.ind[1]],sep=""))
   }
   
-  results<-newQSarray(list(mean=mean,SD=SD,dof=dof,labels=colnames(residual.matrix)))
+  
+  results<-newQSarray(list(
+    mean=mean,
+    SD=SD,
+    sd.alpha=setNames(rep(1, length(mean)),names(mean)),
+    dof=dof,
+    labels=colnames(residual.matrix)
+  ))
   #final.result<-list(residual.matrix=residual.matrix,QSobject=QSobject,res.method=ResidualMethod)
   
-  overlap = sapply(geneSets, function(x){ sum(x %in%
-                                                rownames(eset)) })
+  overlap = sapply(geneSets, function(x){ sum(x %in% rownames(eset)) })
   geneSets=geneSets[overlap>0]
   
   
