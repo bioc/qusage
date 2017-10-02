@@ -441,6 +441,7 @@ qusage.result.corstruct<-qgen(eset.full,flu.meta,
                               contrast=contrast,
                               geneSets=ISG.geneSet,
                               correlation=corStruct,
+                              random=~1|Subject,
                               design.sampleid="SampleID")
 @
 
