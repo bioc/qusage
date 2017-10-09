@@ -431,7 +431,7 @@ qsTable(qusage.result.random)
 \subsection{Qgen with correlations}
 An optional nlme corStruct object to specify within group correlation structure through  the residual covariance matrix and is passed directly to the lme function within the nlme package. There are many modeling options for the user to pick from if this is desired, we strongly urge reading the documentation within the nlme package on CorStruct objects.  As an example suppose we assume that the correlations that exist over the repeated measure time points die off over time exponentially.  The corresponding model to incorporate this strategy would yield
 
-<<qgen_correlation>>=
+<<qgen_correlation, eval=FALSE>>=
 corStruct = corExp(value=3,~Hours.Numeric|Subject)
 corStruct
 
@@ -441,7 +441,6 @@ qusage.result.corstruct<-qgen(eset.full,flu.meta,
                               contrast=contrast,
                               geneSets=ISG.geneSet,
                               correlation=corStruct,
-                              random=~1|Subject,
                               design.sampleid="SampleID")
 @
 
