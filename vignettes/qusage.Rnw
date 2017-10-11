@@ -446,13 +446,13 @@ qusage.result.corstruct<-qgen(eset.full,flu.meta,
 
 The results of both the correlation analysis and the random effects analysis can be compared directly, revealing that in both cases, there seems to be an approximately $(2^{0.8}=1.75)$-fold increase in the expression of ISGs at day 77 of infection. However, in this case, taking random effects into account leads to a more significant p-value, resulting from lower variance in the estimate.
 
-<<qgen_plot, include=F>>=
+<<qgen_plot, include=F, eval=FALSE>>=
   plotDensityCurves(qusage.result.random, main="ISG_geneSet", 
                     xlim=c(0,1.2), xlab="Day 77 - Day 0", col="red")
   plotDensityCurves(qusage.result.corstruct, col="blue",add=T)
 @
 \begin{center}
-<<plotQgen,fig=TRUE,echo=FALSE,width=5,height=3.8>>=
+<<plotQgen,fig=TRUE,echo=FALSE,width=5,height=3.8, eval=FALSE>>=
 <<qgen_plot>>
 @
 \end{center}
