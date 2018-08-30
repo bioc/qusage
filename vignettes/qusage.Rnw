@@ -30,8 +30,9 @@ qusage accounts for inter-gene correlations using a Variance Inflation Factor te
 The qusage package can be downloaded from the Bioconductor website using the following commands:
 
 <<install,eval=FALSE>>=
-source("http://bioconductor.org/biocLite.R")
-biocLite("qusage")
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+BiocManager::install("qusage")
 @
 
 \clearpage
