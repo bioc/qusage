@@ -15,7 +15,7 @@ Author: Christopher Bolen and Gur Yaari, with contributions from Juilee
         Steven Kleinstein
 Maintainer: Christopher Bolen <cbolen1@gmail.com>
 Depends: R (>= 2.10), limma (>= 3.14), methods
-Imports: utils, Biobase, nlme, lsmeans
+Imports: utils, Biobase, nlme, emmeans
 Description: This package is an implementation the Quantitative Set
         Analysis for Gene Expression (QuSAGE) method described in
         (Yaari G. et al, Nucl Acids Res, 2013). This is a novel Gene
@@ -38,4 +38,4 @@ Description: This package is an implementation the Quantitative Set
         (steven.kleinstein@yale.edu)
 License: GPL (>= 2)
 URL: http://clip.med.yale.edu/qusage
-biocViews: GeneSetEnrichment, Microarray, RNASeq, Software
+biocViews: GeneSetEnrichment, Microarray, RNASeq, Software, ImmunoOncology

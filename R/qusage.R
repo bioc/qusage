@@ -5,9 +5,6 @@
 ## Updated: 2015-09-15
 ## (c) 2013 Yale University. All rights reserved.
 
-
-#require(limma)
-
 ##THE BIG WRAPPER FUNCTION
 ## This function runs the entire qusage method on the input data, returning a single
 ## QSarray object containing the results of makeComparison, calcVIF, and aggregateGeneSet.

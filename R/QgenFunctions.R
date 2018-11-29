@@ -163,7 +163,7 @@ qgen<-function(eset,design,fixed,geneSets,contrast.factor,contrast,
           stop(modresult)
         }
       }else{
-        contrast.result<-summary(contrast(lsmeans(modresult,contrast.factor),contrast,by=NULL))
+        contrast.result<-summary(contrast(emmeans(modresult,contrast.factor),contrast,by=NULL))
         mean[i]<-contrast.result$estimate
         SD[i]<-contrast.result$SE
         dof[i]<-contrast.result$df
@@ -202,7 +202,7 @@ qgen<-function(eset,design,fixed,geneSets,contrast.factor,contrast,
         }
       }else{
       
-        contrast.result<-summary(contrast(lsmeans(modresult,contrast.factor),contrast,by=NULL))
+        contrast.result<-summary(contrast(emmeans(modresult,contrast.factor),contrast,by=NULL))
         
         mean[i]<-contrast.result$estimate
         SD[i]<-contrast.result$SE
