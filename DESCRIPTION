@@ -1,5 +1,5 @@
 Package: qusage
-Version: 2.16.0
+Version: 2.16.1
 Date: 2013-01-20
 Title: qusage: Quantitative Set Analysis for Gene Expression
 Authors@R: c(person("Christopher Bolen", "Developer", role = c("aut",
@@ -38,4 +38,4 @@ Description: This package is an implementation the Quantitative Set
         (steven.kleinstein@yale.edu)
 License: GPL (>= 2)
 URL: http://clip.med.yale.edu/qusage
-biocViews: GeneSetEnrichment, Microarray, RNASeq, Software
+biocViews: ImmunoOncology, GeneSetEnrichment, Microarray, RNASeq, Software
