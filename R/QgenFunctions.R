@@ -17,6 +17,7 @@ nonsingular.check <- function(m) class(try(solve(m),silent=T))=="matrix"
 qgen<-function(eset,design,fixed,geneSets,contrast.factor,contrast,
                random=NULL,correlation=NULL,design.sampleid=NULL){
   
+  if(is.data.frame(eset)){eset = as.matrix(eset)}
   
   fixed=paste(as.character(fixed),sep="",collapse="")
   

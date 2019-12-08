@@ -4,6 +4,7 @@ import(nlme)
 import(emmeans)
 import(limma)
 import(methods)
+import(fftw)
 importFrom("graphics", plot)
 
 export(qusage,
