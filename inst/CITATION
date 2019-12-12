@@ -8,5 +8,26 @@ bibentry("Article",
          
          mheader = "To cite QuSAGE, use the following publication:"
         )
+bibentry("Article",
+	 title = "Quantitative gene set analysis generalized for repeated measures, confounder adjustment, and continuous covariates.",
+	 author = c(person("Jacob A.", "Turner"), person("Christopher R.", "Bolen"),person("Derek M.", "Blankenship")),
+	 journal = "BMC Bioinformatics.",
+	 year = 2015,
+	 
+	 textVersion = "Turner JA, Bolen CR, Blankenship DM. Quantitative gene set analysis generalized for repeated measures, confounder adjustment, and continuous covariates. BMC Bioinformatics. 2015 Aug 28",
+         
+         mheader = "To cite the QGen mixed model framework, use the following publication:"
+        )
+bibentry("Article",
+	 title = "Gene set meta-analysis with Quantitative Set Analysis for Gene Expression (QuSAGE).
+.",
+	 author = c(person("Hailong", "Meng"),person("Gur", "Yaari"), person("Christopher R.", "Bolen"),person("Stefan", "Avey"),person("Steven H.", "Kleinstein")),
+	 journal = "PLoS Computat Biol.",
+	 year = 2019,
+	 
+	 textVersion = " Meng H, Yaari G, Bolen CR, Avey S, Kleinstein SH. Gene set meta-analysis with Quantitative Set Analysis for Gene Expression (QuSAGE). PLoS Comput Biol. 2019",
+         
+         mheader = "To cite the QuSAGE meta-analysis framework, use the following publication:"
+        )
 
 
