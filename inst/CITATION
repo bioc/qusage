@@ -1,3 +1,5 @@
+citHeader("Please cite the paper below for the qusage software itself.  Please also try to cite the appropriate methodology articles when using either the QGen mixed model framework or the gene set meta-analysis pipeline.")
+
 bibentry("Article",
 	 title = "Quantitative set analysis for gene expression: a method to quantify gene set differential expression including gene-gene correlations.",
 	 author = c(person("Gur", "Yaari"), person("Christopher R.", "Bolen"),person("Juilee", "Thakar"),person("Steven H.", "Kleinstein")),

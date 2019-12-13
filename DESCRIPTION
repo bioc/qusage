@@ -33,9 +33,12 @@ Description: This package is an implementation the Quantitative Set
         statistical traceability. Finally, while qusage is compatible
         with individual gene statistics from existing methods (e.g.,
         LIMMA), a Welch-based method is implemented that is shown to
-        improve specificity. For questions, contact Chris Bolen
-        (cbolen1@gmail.com) or Steven Kleinstein
-        (steven.kleinstein@yale.edu)
+        improve specificity. The QuSAGE package also includes a mixed
+        effects model implementation, as described in (Turner JA et al, 
+        BMC Bioinformatics, 2015), and a meta-analysis framework as 
+        described in (Meng H, et al. PLoS Comput Biol. 2019).
+        For questions, contact Chris Bolen (cbolen1@gmail.com) or 
+        Steven Kleinstein (steven.kleinstein@yale.edu)
 License: GPL (>= 2)
 URL: http://clip.med.yale.edu/qusage
 biocViews: GeneSetEnrichment, Microarray, RNASeq, Software, ImmunoOncology
