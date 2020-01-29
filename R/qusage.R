@@ -692,13 +692,13 @@ compareTwoDistsFaster <-function(dens1=runif(256*8,0,1), dens2=runif(256*8,0,1),
 ################################FFT method for convolution
 
 multi_conv<-function(x){
-  # x_fft<-apply(x,2,function(x)fft(x, inverse = FALSE))
-  x_fft<-apply(x,2,function(x)fftw::FFT(x, inverse = FALSE))
+  x_fft<-apply(x,2,function(x)fft(x, inverse = FALSE))
+  # x_fft<-apply(x,2,function(x)fftw::FFT(x, inverse = FALSE))
   M<-max(Mod(x_fft))
   x_fft<-x_fft/M
   Prod_fft<-apply(x_fft,1,prod)
-  # p1<-Re(fft(Prod_fft,inverse=TRUE))
-  p1<-Re(fftw::FFT(Prod_fft,inverse=TRUE))
+  p1<-Re(fft(Prod_fft,inverse=TRUE))
+  # p1<-Re(fftw::FFT(Prod_fft,inverse=TRUE))
   N<-nrow(x)
   #     if(ncol(x)%%2==0)p1<-c(p1[(N/2+1):N],p1[1:(N/2)])
   Mp1<-which.max(p1)
