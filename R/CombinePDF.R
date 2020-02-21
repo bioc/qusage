@@ -139,7 +139,7 @@ combinePDFs <- function(QSarrayList,        ##list of qusage resutls from differ
   if(length(num.pathways)==1){
     name.pathway = do.call(cbind,name.pathway)
   }
-  if(class(name.pathway)== "list" || any(name.pathway!=name.pathway[,1])){
+  if("list" %in% class(name.pathway) || any(name.pathway!=name.pathway[,1])){
     stop("The pathways in input QuSAGE objects do not totally match!")
   }
 
