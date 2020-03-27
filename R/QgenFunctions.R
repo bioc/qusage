@@ -85,10 +85,7 @@ qgen<-function(eset,design,fixed,geneSets,contrast.factor,contrast,
   }
   new.factor.levels<-do.call(paste,c(do.call(expand.grid,contrast.factor.2),sep=""))
   if(!all(sapply(design[,contrast.factor.names],is.factor))){
-    stop("Variable included in contrast.factor is not of type 'factor'. ", 
-         "\nDEBUG:\n","contrast.factor.names - ",paste(contrast.factor.names,collapse=", "),
-         "\ndesign class - ",paste(sapply(design[,contrast.factor.names],class),collapse=", ")
-        )
+    stop("Variable included in contrast.factor is not of type 'factor'. ")
   }
   if(!all((new.factor.levels)==make.names(new.factor.levels,unique=TRUE))){
     stop("Factor level combinations specified in contrast.factor do not have valid R names.")

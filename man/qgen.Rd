@@ -44,7 +44,8 @@ Gene sets are commonly obtained from online databases such as Broad's Molecular 
 des<-data.frame(SampleID=paste("Sample",1:100,sep=""),
                 Condition=rep(c("A","B"),each=50),
                 Donor=rep(letters[1:20],each=5),
-                Time=rep(paste("D",0:4,sep=""),20))
+                Time=rep(paste("D",0:4,sep=""),20),
+                stringsAsFactors=TRUE)
 
 
 ##Create example data - a set of 500 genes normally dstributed across 20 patients 
