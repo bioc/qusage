@@ -196,7 +196,7 @@ plotGeneSetDistributions <- function(QSarray1, QSarray2=NULL, path.index=1, colo
     ord = order(QSarray$mean[pathway])
     
     ##Generate color scheme
-    if(class(try(col2rgb(colorScheme),silent=TRUE))!="try-error"){
+    if(!("try-error" %in% class(try(col2rgb(colorScheme),silent=TRUE)))){
       ##if they provided colors
       cols = rep(colorScheme, length.out=length(pathway))
       ##if colorScheme is NA, use black

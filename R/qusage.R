@@ -440,7 +440,7 @@ calcVIF = function(eset,         ##a matrix of log2(expression values). This mus
 #   }
     
   if(is(eset, "ExpressionSet")){eset = exprs(eset)}
-  if(class(geneResults) != "QSarray"){stop("geneResults must be a QSarray object, as created by makeComparison")}
+  if(!("QSarray" %in% class(geneResults))){stop("geneResults must be a QSarray object, as created by makeComparison")}
     
   ##create design matrix
   if(useCAMERA){
@@ -900,7 +900,7 @@ calcPCor = function(eset,         ##a matrix of log2(expression values). This mu
 ){
   if(is.null(geneResults$pathways)){stop("Pathway Information not found. Please provide a list of gene sets.")}
   geneSets = geneResults$pathways  
-  if(class(geneResults) != "QSarray"){stop("geneResults must be a QSarray object, as created by makeComparison")}
+  if(!("QSarray" %in% class(geneResults))){stop("geneResults must be a QSarray object, as created by makeComparison")}
   
   ##create design matrix
   if(useCAMERA){

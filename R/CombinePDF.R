@@ -24,7 +24,7 @@ plotCombinedPDF = function(QScomb, ##a QScomb object
                            ...){
   
   
-  if(class(QScomb) != "QSarray"){
+  if(!("QSarray" %in% class(QScomb))){
     stop("Input object must be of class 'QSarray'")
   }
   if(is.null(QScomb$QSlist)){

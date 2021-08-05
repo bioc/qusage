@@ -5,7 +5,7 @@
 #fixed effects becomes singular.  For longitudinal studies this is the case when subjects are nested within a single
 #level of another fixed effect factor
 
-nonsingular.check <- function(m) class(try(solve(m),silent=T))=="matrix"
+nonsingular.check <- function(m) "matrix" %in% class(try(solve(m),silent=T))
 
 
 
@@ -157,7 +157,7 @@ qgen<-function(eset,design,fixed,geneSets,contrast.factor,contrast,
                          ),
                      silent=T
                      )
-      if(class(modresult)=="try-error"){
+      if("try-error" %in% class(modresult)){
         if(grepl("converg", modresult)){
           converge.ind<-c(converge.ind,i)
         }else{
@@ -195,7 +195,7 @@ qgen<-function(eset,design,fixed,geneSets,contrast.factor,contrast,
       # modresult<-try(lme(formula(paste("y",fixed,sep="")),data=design,random=random,
       #                    correlation=correlation,control=lmeControl(opt='optim')),
       #                silent = T)
-      if(class(modresult)=="try-error"){
+      if("try-error" %in% class(modresult)){
         if(grepl("converg", modresult)){
           converge.ind<-c(converge.ind,i)
         }else{
